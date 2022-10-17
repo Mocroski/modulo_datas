@@ -23,8 +23,20 @@ public class DatasEmJava {
 
 
 
-        long dias = ChronoUnit.DAYS.between(LocalDate.parse("2022-02-01"), LocalDate.now());
-        System.out.println("Possui " + dias + " entrre a faixa de data");
+        /*long dias = ChronoUnit.DAYS.between(LocalDate.parse("2022-02-01"), LocalDate.now());
+        System.out.println("Possui " + dias + " entrre a faixa de data");*/
+
+       Date dateInicial =  new SimpleDateFormat("dd/MM/yyyy").parse("08/04/2021");
+
+       Calendar calendar = Calendar.getInstance();
+       calendar.setTime(dateInicial);
+
+       for (int parcela = 1; parcela <= 12; parcela ++){
+           calendar.add(Calendar.MONTH, 1);
+
+           System.out.println("Parcela  de Número " + parcela  + " com vencimento em: " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
+       }
+
 
     }
 }
