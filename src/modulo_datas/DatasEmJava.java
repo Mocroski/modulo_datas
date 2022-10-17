@@ -1,20 +1,24 @@
 package modulo_datas;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DatasEmJava {
 
-    public static void main(String[] args) {
-
-        Date date = new Date();
-
-        System.out.println("data  " + date);
-
-        /*------simple date format-------*/
+    public static void main(String[] args) throws ParseException {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println("data atual em formato padrao e string " + simpleDateFormat.format(date));
+        Date dataVencimentoBoleto = simpleDateFormat.parse("18/10/2022");
+
+        Date dataAtualHoje = simpleDateFormat.parse("17/10/2022");
+
+        if (dataVencimentoBoleto.after(dataAtualHoje)) {
+            System.out.println("Boleto nao vencindo");
+        } else {
+            System.out.println("Boleto esta vencido");
+        }
     }
 }
