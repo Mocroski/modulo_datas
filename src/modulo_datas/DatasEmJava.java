@@ -3,6 +3,8 @@ package modulo_datas;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,16 +28,35 @@ public class DatasEmJava {
         /*long dias = ChronoUnit.DAYS.between(LocalDate.parse("2022-02-01"), LocalDate.now());
         System.out.println("Possui " + dias + " entrre a faixa de data");*/
 
-       Date dateInicial =  new SimpleDateFormat("dd/MM/yyyy").parse("08/04/2021");
+       /*Date dateInicial =  new SimpleDateFormat("dd/MM/yyyy").parse("08/04/2021");
 
        Calendar calendar = Calendar.getInstance();
-       calendar.setTime(dateInicial);
+       calendar.setTime(dateInicial);*/
 
-       for (int parcela = 1; parcela <= 12; parcela ++){
+       /*for (int parcela = 1; parcela <= 12; parcela ++){
            calendar.add(Calendar.MONTH, 1);
 
            System.out.println("Parcela  de Número " + parcela  + " com vencimento em: " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
-       }
+       }*/
+
+
+
+        /*Nova api de data a partir do java 8*/
+
+        LocalDate dataAtual = LocalDate.now();
+
+        System.out.println(dataAtual);
+
+        LocalTime horaAtual = LocalTime.now();
+
+        System.out.println(horaAtual);
+
+        LocalDateTime dataAtualHora = LocalDateTime.now();
+        System.out.println(dataAtualHora);
+
+
+
+
 
 
     }
