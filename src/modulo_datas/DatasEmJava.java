@@ -9,16 +9,15 @@ public class DatasEmJava {
 
     public static void main(String[] args) throws ParseException {
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+      Calendar calendar = Calendar.getInstance();/*usa data atual*/
 
-        Date dataVencimentoBoleto = simpleDateFormat.parse("18/10/2022");
+      /*simular que a data vem do bacnoc de dados*/
 
-        Date dataAtualHoje = simpleDateFormat.parse("17/10/2022");
+      calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));/*definindo data qualquer*/
 
-        if (dataVencimentoBoleto.after(dataAtualHoje)) {
-            System.out.println("Boleto nao vencindo");
-        } else {
-            System.out.println("Boleto esta vencido");
-        }
+      calendar.add(Calendar.DAY_OF_MONTH, 5);
+
+        System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+
     }
 }
