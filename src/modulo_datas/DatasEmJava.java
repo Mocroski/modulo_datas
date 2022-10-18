@@ -74,13 +74,23 @@ public class DatasEmJava {
         System.out.println("duracao em miliseg: " + duracao.toMillis());*/
 
 
-        LocalDate dataAntiga = LocalDate.of(2020, 2, 7);
+        /*LocalDate dataAntiga = LocalDate.of(2020, 2, 7);
         LocalDate dataNova = LocalDate.of(2021, 7, 2);
 
         System.out.println("data atniga é mair que a data nova: " + dataAntiga.isAfter(dataNova));
 
         Period period = Period.between(dataAntiga, dataNova);
-        System.out.println("Periodo é: " + period.getYears() + " anos " + period.getMonths() + " meses " + period.getDays() + " dias ");
+        System.out.println("Periodo é: " + period.getYears() + " anos " + period.getMonths() + " meses " + period.getDays() + " dias ");*/
+
+
+        LocalDate dataBase = LocalDate.parse("2019-10-05");
+
+        for (int parcela = 1; parcela <= 12; parcela ++) {
+            dataBase.plusMonths(1);
+            System.out.println("Data de vencimento do boleto: " + dataBase.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " da parcela: " + parcela);
+
+        }
+
 
 
     }
