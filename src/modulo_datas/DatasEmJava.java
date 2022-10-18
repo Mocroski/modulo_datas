@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,9 +14,9 @@ public class DatasEmJava {
 
     public static void main(String[] args) throws ParseException {
 
-     /* Calendar calendar = Calendar.getInstance();*//*usa data atual*//*
+        /* Calendar calendar = Calendar.getInstance();*//*usa data atual*//*
 
-      *//*simular que a data vem do bacnoc de dados*//*
+         *//*simular que a data vem do bacnoc de dados*//*
 
       calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2022"));*//*definindo data qualquer*//*
 
@@ -43,7 +44,7 @@ public class DatasEmJava {
 
         /*Nova api de data a partir do java 8*/
 
-        LocalDate dataAtual = LocalDate.now();
+      /*  LocalDate dataAtual = LocalDate.now();
 
         System.out.println(dataAtual);
 
@@ -52,11 +53,15 @@ public class DatasEmJava {
         System.out.println(horaAtual);
 
         LocalDateTime dataAtualHora = LocalDateTime.now();
-        System.out.println(dataAtualHora);
+        System.out.println(dataAtualHora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));*/
 
 
-
-
+        LocalDate localDate = LocalDate.now();
+        System.out.println("Data atual: " + localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        System.out.println("Dia da semana: " + localDate.getDayOfWeek());
+        System.out.println("Dia do mes: " + localDate.getDayOfMonth());
+        System.out.println("Mes: " + localDate.getMonth());
+        System.out.println("Ano: " + localDate.getYear());
 
 
     }
