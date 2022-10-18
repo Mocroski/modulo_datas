@@ -61,7 +61,7 @@ public class DatasEmJava {
         System.out.println("Mes: " + localDate.getMonth());
         System.out.println("Ano: " + localDate.getYear());*/
 
-        Instant inicio = Instant.now();
+       /* Instant inicio = Instant.now();
 
         Thread.sleep(2000);
 
@@ -71,7 +71,16 @@ public class DatasEmJava {
 
         System.out.println("duracao em nano segundos: " + duracao.toNanos());
         System.out.println("duracao em minutos: " + duracao.toMinutes());
-        System.out.println("duracao em miliseg: " + duracao.toMillis());
+        System.out.println("duracao em miliseg: " + duracao.toMillis());*/
+
+
+        LocalDate dataAntiga = LocalDate.of(2020, 2, 7);
+        LocalDate dataNova = LocalDate.of(2021, 7, 2);
+
+        System.out.println("data atniga é mair que a data nova: " + dataAntiga.isAfter(dataNova));
+
+        Period period = Period.between(dataAntiga, dataNova);
+        System.out.println("Periodo é: " + period.getYears() + " anos " + period.getMonths() + " meses " + period.getDays() + " dias ");
 
 
     }
